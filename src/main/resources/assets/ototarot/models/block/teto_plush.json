@@ -1,0 +1,9 @@
+{
+  "parent": "ototarot:custom/teto_plush",
+  "textures": {
+    "all": "ototarot:block/teto_plush",
+    "particle": "ototarot:block/teto_plush",
+    "0": "ototarot:block/teto_plush"
+  },
+  "render_type": "cutout"
+}

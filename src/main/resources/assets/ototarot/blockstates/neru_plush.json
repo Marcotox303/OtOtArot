@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "ototarot:block/neru_plush",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "ototarot:block/neru_plush",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "ototarot:block/neru_plush",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "ototarot:block/neru_plush"
+    }
+  }
+}

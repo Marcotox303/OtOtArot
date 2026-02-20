@@ -1,0 +1,9 @@
+{
+  "parent": "ototarot:custom/miku_plush",
+  "textures": {
+    "all": "ototarot:block/miku_plush",
+    "particle": "ototarot:block/miku_plush",
+    "2": "ototarot:block/miku_plush"
+  },
+  "render_type": "cutout"
+}

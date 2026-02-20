@@ -1,0 +1,9 @@
+{
+  "parent": "ototarot:custom/neru_plush",
+  "textures": {
+    "all": "ototarot:block/neru_plush",
+    "particle": "ototarot:block/neru_plush",
+    "0": "ototarot:block/neru_plush"
+  },
+  "render_type": "cutout"
+}
