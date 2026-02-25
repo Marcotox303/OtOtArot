@@ -15,3 +15,5 @@ function ototarot:tick
 # Stop time and make it move slower
 gamerule doDaylightCycle false
 function ototarot:change_day
+
+# Flan stuff

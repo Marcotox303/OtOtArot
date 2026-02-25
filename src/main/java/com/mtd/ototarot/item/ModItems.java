@@ -18,6 +18,11 @@ public class ModItems {
     public static final DeferredItem<Item> PERROT_COIN = ITEMS.register("perrot_coin",
             () -> new Item(new Item.Properties()));
 
+    public static final DeferredItem<Item> TERRAIN_CLAIMER = ITEMS.register("terrain_claimer",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> TERRAIN_INSPECTOR = ITEMS.register("terrain_inspector",
+            () -> new Item(new Item.Properties()));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

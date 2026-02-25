@@ -23,6 +23,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.GOLDEN_COIN);
                         output.accept(ModItems.MARTINBUTTER);
                         output.accept(ModItems.PERROT_COIN);
+                        output.accept(ModItems.TERRAIN_CLAIMER);
+                        output.accept(ModItems.TERRAIN_INSPECTOR);
                     }))
                     .build());
 

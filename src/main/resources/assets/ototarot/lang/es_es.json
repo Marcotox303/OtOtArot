@@ -8,5 +8,7 @@
   "painting.ototarot.martinbutter.author": "MarkTD",
   "block.ototarot.miku_plush": "Peluche de Miku",
   "block.ototarot.teto_plush": "Peluche de Teto",
-  "block.ototarot.neru_plush": "Peluche de Neru"
+  "block.ototarot.neru_plush": "Peluche de Neru",
+  "item.ototarot.terrain_claimer": "Reclamador de terreno",
+  "item.ototarot.terrain_inspector": "Inspector de terreno"
 }

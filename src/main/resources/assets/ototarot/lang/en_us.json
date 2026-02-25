@@ -1,12 +1,14 @@
 {
-  "item.ototarot.golden_coin": "Golden coin",
-  "item.ototarot.iron_coin": "Iron coin",
+  "item.ototarot.golden_coin": "Golden Coin",
+  "item.ototarot.iron_coin": "Iron Coin",
   "item.ototarot.martinbutter": "Martinbutter",
-  "item.ototarot.perrot_coin": "Perrot coin",
+  "item.ototarot.perrot_coin": "Perrot Coin",
   "creativetab.ototarot.ototarot_items": "Ot Ot Arot",
   "painting.ototarot.martinbutter.title": "Martinbutter",
   "painting.ototarot.martinbutter.author": "MarkTD",
-  "block.ototarot.miku_plush": "Miku plush",
-  "block.ototarot.teto_plush": "Teto plush",
-  "block.ototarot.neru_plush": "Neru plush"
+  "block.ototarot.miku_plush": "Miku Plush",
+  "block.ototarot.teto_plush": "Teto Plush",
+  "block.ototarot.neru_plush": "Neru Plush",
+  "item.ototarot.terrain_claimer": "Terrain Claimer",
+  "item.ototarot.terrain_inspector": "Terrain Inspector"
 }
