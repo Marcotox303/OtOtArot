@@ -25,6 +25,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.PERROT_COIN);
                         output.accept(ModItems.TERRAIN_CLAIMER);
                         output.accept(ModItems.TERRAIN_INSPECTOR);
+                        output.accept(ModItems.CLAIM_GENERATOR);
                     }))
                     .build());
 

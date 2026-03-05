@@ -28,5 +28,9 @@
   "item.ototarot.bata_boom_music_disc": "Disco de música",
   "item.ototarot.bata_boom_music_disc.desc": "De La Calle - Bata Boom",
   "item.ototarot.4k_music_disc": "Disco de música",
-  "item.ototarot.4k_music_disc.desc": "El Alfa ft. Darell & Noriel - 4K"
+  "item.ototarot.4k_music_disc.desc": "El Alfa ft. Darell & Noriel - 4K",
+  "item.ototarot.claim_generator": "Generador de parcelas",
+  "tooltip.ototarot.claim_generator.tooltip": "§6Cuando se use, la parcela de tu equipo se creará en una zona 10x10 centrada en tí.§r",
+  "tooltip.ototarot.terrain_claimer.tooltip": "§6Puede ser usado para modificar el borde de tu parcela.§r",
+  "tooltip.ototarot.terrain_inspector.tooltip": "§6Te permite ver a quién le pertenece la parcela sobre la que estás.§r"
 }
