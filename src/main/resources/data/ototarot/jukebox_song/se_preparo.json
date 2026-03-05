@@ -1,0 +1,8 @@
+{
+  "comparator_output": 15,
+  "description": {
+    "translate": "item.ototarot.se_preparo_music_disc.desc"
+  },
+  "length_in_seconds": 183,
+  "sound_event": "ototarot:se_preparo"
+}

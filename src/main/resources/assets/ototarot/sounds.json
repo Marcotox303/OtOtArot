@@ -1,0 +1,56 @@
+{
+  "se_preparo": {
+    "stream": true,
+    "sounds": [
+      "ototarot:se_preparo"
+    ]
+  },
+  "pppp": {
+    "stream": true,
+    "sounds": [
+      "ototarot:pppp"
+    ]
+  },
+  "lemon_melon_cookie": {
+    "stream": true,
+    "sounds": [
+      "ototarot:lemon_melon_cookie"
+    ]
+  },
+  "la_vida_es_un_carrusel": {
+    "stream": true,
+    "sounds": [
+      "ototarot:la_vida_es_un_carrusel"
+    ]
+  },
+  "la_gozadera": {
+    "stream": true,
+    "sounds": [
+      "ototarot:la_gozadera"
+    ]
+  },
+  "chupa_la_gamba": {
+    "stream": true,
+    "sounds": [
+      "ototarot:chupa_la_gamba"
+    ]
+  },
+  "can_you_send_me_30k": {
+    "stream": true,
+    "sounds": [
+      "ototarot:can_you_send_me_30k"
+    ]
+  },
+  "bata_boom": {
+    "stream": true,
+    "sounds": [
+      "ototarot:bata_boom"
+    ]
+  },
+  "4k": {
+    "stream": true,
+    "sounds": [
+      "ototarot:4k"
+    ]
+  }
+}

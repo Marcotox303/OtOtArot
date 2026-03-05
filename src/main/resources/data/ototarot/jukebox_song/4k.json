@@ -1,0 +1,8 @@
+{
+  "comparator_output": 15,
+  "description": {
+    "translate": "item.ototarot.4k_music_disc.desc"
+  },
+  "length_in_seconds": 215,
+  "sound_event": "ototarot:4k"
+}

@@ -1,0 +1,8 @@
+{
+  "comparator_output": 15,
+  "description": {
+    "translate": "item.ototarot.lemon_melon_cookie_music_disc.desc"
+  },
+  "length_in_seconds": 152,
+  "sound_event": "ototarot:lemon_melon_cookie"
+}

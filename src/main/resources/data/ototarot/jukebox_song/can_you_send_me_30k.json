@@ -1,0 +1,8 @@
+{
+  "comparator_output": 15,
+  "description": {
+    "translate": "item.ototarot.can_you_send_me_30k_music_disc.desc"
+  },
+  "length_in_seconds": 133,
+  "sound_event": "ototarot:can_you_send_me_30k"
+}

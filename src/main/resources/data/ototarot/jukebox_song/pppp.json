@@ -1,0 +1,8 @@
+{
+  "comparator_output": 15,
+  "description": {
+    "translate": "item.ototarot.pppp_music_disc.desc"
+  },
+  "length_in_seconds": 156,
+  "sound_event": "ototarot:pppp"
+}

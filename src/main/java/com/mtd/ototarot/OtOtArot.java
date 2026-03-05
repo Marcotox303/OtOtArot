@@ -5,6 +5,7 @@ import com.mtd.ototarot.block.ModBlocks;
 import com.mtd.ototarot.dims.DimLogicHandler;
 import com.mtd.ototarot.item.ModCreativeModeTabs;
 import com.mtd.ototarot.item.ModItems;
+import com.mtd.ototarot.sound.ModSounds;
 import com.mtd.ototarot.teams.TeamSelectionPayload;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.GlobalPos;
@@ -52,6 +53,7 @@ public class OtOtArot {
         ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModSounds.register(modEventBus);
         ATTACHMENT_TYPES.register(modEventBus);
 
         // 2. Registros de juego (Bus de FORGE)

@@ -1,0 +1,8 @@
+{
+  "comparator_output": 15,
+  "description": {
+    "translate": "item.ototarot.chupa_la_gamba_music_disc.desc"
+  },
+  "length_in_seconds": 201,
+  "sound_event": "ototarot:chupa_la_gamba"
+}

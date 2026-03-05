@@ -1,0 +1,8 @@
+{
+  "comparator_output": 15,
+  "description": {
+    "translate": "item.ototarot.la_gozadera_music_disc.desc"
+  },
+  "length_in_seconds": 203,
+  "sound_event": "ototarot:la_gozadera"
+}
