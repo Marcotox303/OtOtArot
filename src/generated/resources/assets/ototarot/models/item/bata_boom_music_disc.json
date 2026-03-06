@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "ototarot:item/bata_boom_music_disc"
+  }
+}

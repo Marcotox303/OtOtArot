@@ -71,37 +71,6 @@ public class OtOtArot {
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
-    @SubscribeEvent
-    public static void onRegisterArmorParsers(EntityRenderersEvent.AddLayers event) {
-        // Registramos nuestro modelo para que el juego lo conozca globalmente
-        // Esto sustituye la necesidad de hacerlo dentro del Item
-    }
-
-    @net.neoforged.fml.common.EventBusSubscriber(modid = MOD_ID, bus = net.neoforged.fml.common.EventBusSubscriber.Bus.MOD, value = net.neoforged.api.distmarker.Dist.CLIENT)
-    public static class ClientEvents {
-
-        // Definimos los ModelLayerLocation directamente
-        private static final net.minecraft.client.model.geom.ModelLayerLocation ILLAGER_ARMOR =
-                new net.minecraft.client.model.geom.ModelLayerLocation(ResourceLocation.fromNamespaceAndPath("villagerarmor", "illager"), "inner_armor");
-        private static final net.minecraft.client.model.geom.ModelLayerLocation VILLAGER_ARMOR =
-                new net.minecraft.client.model.geom.ModelLayerLocation(ResourceLocation.fromNamespaceAndPath("villagerarmor", "villager"), "inner_armor");
-        private static final net.minecraft.client.model.geom.ModelLayerLocation WITCH_ARMOR =
-                new net.minecraft.client.model.geom.ModelLayerLocation(ResourceLocation.fromNamespaceAndPath("villagerarmor", "witch"), "inner_armor");
-
-        @net.neoforged.bus.api.SubscribeEvent
-        public static void registerLayers(net.neoforged.neoforge.client.event.EntityRenderersEvent.RegisterLayerDefinitions event) {
-            // Creamos la malla humana básica para estas capas
-            net.minecraft.client.model.geom.builders.LayerDefinition armorLayer =
-                    net.minecraft.client.model.geom.builders.LayerDefinition.create(
-                            net.minecraft.client.model.HumanoidModel.createMesh(new net.minecraft.client.model.geom.builders.CubeDeformation(0.5F), 0), 64, 32);
-
-            // Registramos usando los ModelLayerLocation
-            event.registerLayerDefinition(ILLAGER_ARMOR, () -> armorLayer);
-            event.registerLayerDefinition(VILLAGER_ARMOR, () -> armorLayer);
-            event.registerLayerDefinition(WITCH_ARMOR, () -> armorLayer);
-        }
-    }
-
     private void commonSetup(FMLCommonSetupEvent event) {}
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {}

@@ -1,0 +1,93 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": [
+    {
+      "item": "minecraft:music_disc_5"
+    },
+    {
+      "item": "minecraft:music_disc_11"
+    },
+    {
+      "item": "minecraft:music_disc_13"
+    },
+    {
+      "item": "minecraft:music_disc_blocks"
+    },
+    {
+      "item": "minecraft:music_disc_cat"
+    },
+    {
+      "item": "minecraft:music_disc_chirp"
+    },
+    {
+      "item": "minecraft:music_disc_creator"
+    },
+    {
+      "item": "minecraft:music_disc_creator_music_box"
+    },
+    {
+      "item": "minecraft:music_disc_far"
+    },
+    {
+      "item": "minecraft:music_disc_mall"
+    },
+    {
+      "item": "minecraft:music_disc_mellohi"
+    },
+    {
+      "item": "minecraft:music_disc_otherside"
+    },
+    {
+      "item": "minecraft:music_disc_pigstep"
+    },
+    {
+      "item": "minecraft:music_disc_precipice"
+    },
+    {
+      "item": "minecraft:music_disc_relic"
+    },
+    {
+      "item": "minecraft:music_disc_stal"
+    },
+    {
+      "item": "minecraft:music_disc_strad"
+    },
+    {
+      "item": "minecraft:music_disc_wait"
+    },
+    {
+      "item": "minecraft:music_disc_ward"
+    },
+    {
+      "item": "ototarot:pppp_music_disc"
+    },
+    {
+      "item": "ototarot:4k_music_disc"
+    },
+    {
+      "item": "ototarot:se_preparo_music_disc"
+    },
+    {
+      "item": "ototarot:lemon_melon_cookie_music_disc"
+    },
+    {
+      "item": "ototarot:la_gozadera_music_disc"
+    },
+    {
+      "item": "ototarot:la_vida_es_un_carrusel_music_disc"
+    },
+    {
+      "item": "ototarot:chupa_la_gamba_music_disc"
+    },
+    {
+      "item": "ototarot:can_you_send_me_30k_music_disc"
+    },
+    {
+      "item": "ototarot:bata_boom_music_disc"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "ototarot:se_preparo_music_disc"
+  }
+}

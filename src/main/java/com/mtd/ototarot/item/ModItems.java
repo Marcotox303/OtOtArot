@@ -1,7 +1,6 @@
 package com.mtd.ototarot.item;
 
 import com.mtd.ototarot.OtOtArot;
-import com.mtd.ototarot.client.model.PerrotMaskModel;
 import com.mtd.ototarot.item.custom.ClaimGeneratorItem;
 import com.mtd.ototarot.item.custom.PerrotMaskItem;
 import com.mtd.ototarot.sound.ModSounds;

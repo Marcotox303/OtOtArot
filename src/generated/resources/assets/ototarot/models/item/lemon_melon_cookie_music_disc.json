@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "ototarot:item/lemon_melon_cookie_music_disc"
+  }
+}

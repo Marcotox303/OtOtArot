@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "C": {
+      "tag": "minecraft:stone_crafting_materials"
+    },
+    "I": {
+      "item": "minecraft:raw_iron"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "pattern": [
+    "CRC",
+    "RIR",
+    "CRC"
+  ],
+  "result": {
+    "count": 1,
+    "id": "ototarot:terrain_claimer"
+  }
+}

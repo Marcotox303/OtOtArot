@@ -1,14 +1,17 @@
 package com.mtd.ototarot.item.custom;
 
-import com.mtd.ototarot.client.model.PerrotMaskModel;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.*;
+import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 import org.jetbrains.annotations.NotNull;
 
@@ -27,12 +30,16 @@ public class PerrotMaskItem extends ArmorItem {
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
     }
     @Override
-    public void initializeClient(java.util.function.Consumer<net.neoforged.neoforge.client.extensions.common.IClientItemExtensions> consumer) {
-        consumer.accept(new net.neoforged.neoforge.client.extensions.common.IClientItemExtensions() {
-            @Override
-            public net.minecraft.client.model.HumanoidModel<?> getHumanoidArmorModel(net.minecraft.world.entity.LivingEntity entity, net.minecraft.world.item.ItemStack itemStack, net.minecraft.world.entity.EquipmentSlot armorSlot, net.minecraft.client.model.HumanoidModel<?> _default) {
-                return new PerrotMaskModel<>(net.minecraft.client.Minecraft.getInstance().getEntityModels().bakeLayer(net.minecraft.client.model.geom.ModelLayers.PLAYER_OUTER_ARMOR));
+    public void inventoryTick(ItemStack stack, Level level, Entity entity, int slotId, boolean isSelected) {
+        if (!level.isClientSide() && entity instanceof LivingEntity livingEntity) {
+            // Comprobamos si el ítem en el slot de la cabeza es esta máscara
+            ItemStack armorStack = livingEntity.getItemBySlot(EquipmentSlot.HEAD);
+
+            if (armorStack.getItem() == this) {
+                // Aplicamos Veneno II (el 1 en el amplificador significa nivel 2)
+                // 40 ticks = 2 segundos, se refresca constantemente mientras la lleve
+                livingEntity.addEffect(new MobEffectInstance(MobEffects.POISON, 40, 1, false, false, true));
             }
-        });
+        }
     }
 }

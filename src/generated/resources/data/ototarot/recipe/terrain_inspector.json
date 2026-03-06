@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "G": {
+      "item": "minecraft:gold_ingot"
+    },
+    "I": {
+      "item": "minecraft:raw_iron"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "pattern": [
+    "  G",
+    " I ",
+    "R  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "ototarot:terrain_inspector"
+  }
+}
