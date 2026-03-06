@@ -8,6 +8,11 @@ import com.mtd.ototarot.item.ModItems;
 import com.mtd.ototarot.sound.ModSounds;
 import com.mtd.ototarot.teams.TeamSelectionPayload;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.model.HumanoidModel;
+import net.minecraft.client.model.geom.ModelLayerLocation;
+import net.minecraft.client.model.geom.builders.CubeDeformation;
+import net.minecraft.client.model.geom.builders.LayerDefinition;
+import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.core.GlobalPos;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -18,13 +23,16 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.scores.PlayerTeam;
 import net.minecraft.world.scores.Scoreboard;
+import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.attachment.AttachmentType;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
@@ -56,10 +64,42 @@ public class OtOtArot {
         ModSounds.register(modEventBus);
         ATTACHMENT_TYPES.register(modEventBus);
 
+
         // 2. Registros de juego (Bus de FORGE)
         NeoForge.EVENT_BUS.register(this);
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+    }
+
+    @SubscribeEvent
+    public static void onRegisterArmorParsers(EntityRenderersEvent.AddLayers event) {
+        // Registramos nuestro modelo para que el juego lo conozca globalmente
+        // Esto sustituye la necesidad de hacerlo dentro del Item
+    }
+
+    @net.neoforged.fml.common.EventBusSubscriber(modid = MOD_ID, bus = net.neoforged.fml.common.EventBusSubscriber.Bus.MOD, value = net.neoforged.api.distmarker.Dist.CLIENT)
+    public static class ClientEvents {
+
+        // Definimos los ModelLayerLocation directamente
+        private static final net.minecraft.client.model.geom.ModelLayerLocation ILLAGER_ARMOR =
+                new net.minecraft.client.model.geom.ModelLayerLocation(ResourceLocation.fromNamespaceAndPath("villagerarmor", "illager"), "inner_armor");
+        private static final net.minecraft.client.model.geom.ModelLayerLocation VILLAGER_ARMOR =
+                new net.minecraft.client.model.geom.ModelLayerLocation(ResourceLocation.fromNamespaceAndPath("villagerarmor", "villager"), "inner_armor");
+        private static final net.minecraft.client.model.geom.ModelLayerLocation WITCH_ARMOR =
+                new net.minecraft.client.model.geom.ModelLayerLocation(ResourceLocation.fromNamespaceAndPath("villagerarmor", "witch"), "inner_armor");
+
+        @net.neoforged.bus.api.SubscribeEvent
+        public static void registerLayers(net.neoforged.neoforge.client.event.EntityRenderersEvent.RegisterLayerDefinitions event) {
+            // Creamos la malla humana básica para estas capas
+            net.minecraft.client.model.geom.builders.LayerDefinition armorLayer =
+                    net.minecraft.client.model.geom.builders.LayerDefinition.create(
+                            net.minecraft.client.model.HumanoidModel.createMesh(new net.minecraft.client.model.geom.builders.CubeDeformation(0.5F), 0), 64, 32);
+
+            // Registramos usando los ModelLayerLocation
+            event.registerLayerDefinition(ILLAGER_ARMOR, () -> armorLayer);
+            event.registerLayerDefinition(VILLAGER_ARMOR, () -> armorLayer);
+            event.registerLayerDefinition(WITCH_ARMOR, () -> armorLayer);
+        }
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {}

@@ -1,13 +1,15 @@
 package com.mtd.ototarot.item;
 
 import com.mtd.ototarot.OtOtArot;
+import com.mtd.ototarot.client.model.PerrotMaskModel;
 import com.mtd.ototarot.item.custom.ClaimGeneratorItem;
+import com.mtd.ototarot.item.custom.PerrotMaskItem;
 import com.mtd.ototarot.sound.ModSounds;
+import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Rarity;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -64,6 +66,11 @@ public class ModItems {
 
     public static final DeferredItem<Item> CLAIM_GENERATOR = ITEMS.register("claim_generator",
             () -> new ClaimGeneratorItem(new Item.Properties().stacksTo(1)));
+
+    // Dentro de ModItems.java, cambia el registro de PERROT_MASK:
+    public static final DeferredItem<Item> PERROT_MASK = ITEMS.register("perrot_mask",
+            () -> new PerrotMaskItem(ModArmorMaterials.PERROT_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
+                    new Item.Properties().rarity(Rarity.EPIC).stacksTo(1)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

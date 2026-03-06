@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "ototarot:item/can_you_send_me_30k_music_disc"
-  }
-}

@@ -1,0 +1,10 @@
+[[dependencies.ototarot]]
+modId="securitycraft"
+type="optional"
+ordering="AFTER"
+side="BOTH"
+[[dependencies.ototarot]] # Usa el MOD_ID de tu mod
+modId="villager_armor_layer" # ID del mod de CurseForge
+type="required" # Obligatorio
+ordering="AFTER" # Tu mod carga después de la dependencia
+side="BOTH" # Necesario en cliente y servidor

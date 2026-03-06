@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "ototarot:item/la_vida_es_un_carrusel_music_disc"
-  }
-}

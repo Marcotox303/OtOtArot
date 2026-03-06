@@ -32,5 +32,7 @@
   "item.ototarot.claim_generator": "Generador de parcelas",
   "tooltip.ototarot.claim_generator.tooltip": "§6Cuando se use, la parcela de tu equipo se creará en una zona 10x10 centrada en tí.§r",
   "tooltip.ototarot.terrain_claimer.tooltip": "§6Puede ser usado para modificar el borde de tu parcela.§r",
-  "tooltip.ototarot.terrain_inspector.tooltip": "§6Te permite ver a quién le pertenece la parcela sobre la que estás.§r"
+  "tooltip.ototarot.terrain_inspector.tooltip": "§6Te permite ver a quién le pertenece la parcela sobre la que estás.§r",
+  "item.ototarot.perrot_mask": "Máscara de Perrot",
+  "tooltip.ototarot.perrot_mask.tooltip": "Que puto asco no?"
 }

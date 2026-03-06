@@ -32,5 +32,7 @@
   "item.ototarot.claim_generator": "Claim Generator",
   "tooltip.ototarot.claim_generator.tooltip": "§6When used, your team's claim will be created in a 10x10 zone centered at you.§r",
   "tooltip.ototarot.terrain_claimer.tooltip": "§6Can be used to modify your claim's border.§r",
-  "tooltip.ototarot.terrain_inspector.tooltip": "§6Allows you to see who's the owner of the claim you're standing on.§r"
+  "tooltip.ototarot.terrain_inspector.tooltip": "§6Allows you to see who's the owner of the claim you're standing on.§r",
+  "item.ototarot.perrot_mask": "Perrot Mask",
+  "tooltip.ototarot.perrot_mask.tooltip": "Vomitive"
 }
