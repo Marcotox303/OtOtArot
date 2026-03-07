@@ -2,6 +2,7 @@ package com.mtd.ototarot;
 
 import com.mojang.logging.LogUtils;
 import com.mtd.ototarot.block.ModBlocks;
+import com.mtd.ototarot.blockentity.ModBlockEntities;
 import com.mtd.ototarot.dims.DimLogicHandler;
 import com.mtd.ototarot.item.ModCreativeModeTabs;
 import com.mtd.ototarot.item.ModItems;
@@ -38,6 +39,7 @@ import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
+import net.neoforged.neoforge.event.server.ServerAboutToStartEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 import net.neoforged.neoforge.network.PacketDistributor;
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
@@ -46,6 +48,11 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import org.slf4j.Logger;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 
 @Mod(OtOtArot.MOD_ID)
 public class OtOtArot {
@@ -61,6 +68,7 @@ public class OtOtArot {
         ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
         ModSounds.register(modEventBus);
         ATTACHMENT_TYPES.register(modEventBus);
 
@@ -86,12 +94,12 @@ public class OtOtArot {
 
         // Hacia el CLIENTE
         registrar.playToClient(OpenTeamGuiPayload.TYPE, OpenTeamGuiPayload.CODEC, (p2, c2) -> {
-            c2.enqueueWork(() -> {
-                // Llamamos a una clase externa para no crashear el servidor
-                DistHelper.openTeamScreen();
-            });
+            // Llamamos a una clase externa para no crashear el servidor
+            c2.enqueueWork(DistHelper::openTeamScreen);
         });
     }
+
+
 
     // Lógica de equipos
     public static void processTeamJoin(ServerPlayer player, String colorName) {
@@ -121,8 +129,11 @@ public class OtOtArot {
     @SubscribeEvent
     public void onPlayerTick(PlayerTickEvent.Post event) {
         if (event.getEntity() instanceof ServerPlayer player) {
-            if (player.tickCount % 60 == 0) { // Cada 3 segundos
-                if (player.getScoreboard().getPlayersTeam(player.getScoreboardName()) == null) {
+            // Aumentamos el intervalo a 5 segundos (100 ticks) para dar margen
+            if (player.tickCount % 100 == 0) {
+                Scoreboard sb = player.getScoreboard();
+                // Solo abrimos si realmente no tiene equipo
+                if (sb.getPlayersTeam(player.getScoreboardName()) == null) {
                     PacketDistributor.sendToPlayer(player, new OpenTeamGuiPayload());
                 }
             }
@@ -131,7 +142,7 @@ public class OtOtArot {
 
     @SubscribeEvent
     public void onRegisterCommands(RegisterCommandsEvent event) {
-        event.getDispatcher().register(net.minecraft.commands.Commands.literal("arotlobby")
+        event.getDispatcher().register(net.minecraft.commands.Commands.literal("lobby_inicio")
                 .executes(c -> { performTeleport(c.getSource().getPlayerOrException()); return 1; }));
     }
 
@@ -160,10 +171,8 @@ public class OtOtArot {
         if (destDim == null) return;
         if (player.level().dimension() == miDimKey) {
             GlobalPos lastPos = player.getData(LAST_POS);
-            if (lastPos != null) {
-                ServerLevel originDim = player.server.getLevel(lastPos.dimension());
-                if (originDim != null) player.teleportTo(originDim, lastPos.pos().getX(), lastPos.pos().getY(), lastPos.pos().getZ(), player.getYRot(), player.getXRot());
-            }
+            ServerLevel originDim = player.server.getLevel(lastPos.dimension());
+            if (originDim != null) player.teleportTo(originDim, lastPos.pos().getX(), lastPos.pos().getY(), lastPos.pos().getZ(), player.getYRot(), player.getXRot());
         } else {
             player.setData(LAST_POS, GlobalPos.of(player.level().dimension(), player.blockPosition()));
             player.teleportTo(destDim, 0.5, 64.0, 0.5, 0, 0);

@@ -21,6 +21,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.TETO_PLUSH.get());
         dropSelf(ModBlocks.MIKU_PLUSH.get());
         dropSelf(ModBlocks.NERU_PLUSH.get());
+        dropSelf(ModBlocks.DISCO_BALL.get());
     }
 
     @Override

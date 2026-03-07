@@ -57,11 +57,12 @@ public class TeamSelectionScreen extends Screen {
         // Enviamos un paquete al servidor para procesar la entrada
         // No podemos meter al jugador al equipo desde el cliente por seguridad
         PacketDistributor.sendToServer(new TeamSelectionPayload(color.name));
-        this.onClose();
+        super.onClose();
     }
     @Override
     public boolean shouldCloseOnEsc() {
-        // Solo dejamos cerrar si el jugador ya tiene un equipo asignado
+        // Solo permitimos ESC si ya tiene equipo.
+        // Si no tiene, está obligado a elegir uno de la lista.
         Scoreboard sb = Minecraft.getInstance().level.getScoreboard();
         return sb.getPlayersTeam(Minecraft.getInstance().player.getScoreboardName()) != null;
     }

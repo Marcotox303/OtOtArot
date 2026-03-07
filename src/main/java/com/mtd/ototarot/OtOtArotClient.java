@@ -1,5 +1,7 @@
 package com.mtd.ototarot;
 
+import com.mtd.ototarot.blockentity.ModBlockEntities;
+import com.mtd.ototarot.client.render.DiscoBallRenderer;
 import com.mtd.ototarot.teams.TeamSelectionPayload;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.components.Button;
@@ -12,6 +14,7 @@ import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.neoforged.neoforge.network.PacketDistributor;
@@ -33,5 +36,11 @@ public class OtOtArotClient {
         // Some client setup code
         OtOtArot.LOGGER.info("HELLO FROM CLIENT SETUP");
         OtOtArot.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+    }
+
+    @SubscribeEvent
+    public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        // Le dice a Minecraft: "Usa el DiscoBallRenderer para dibujar el BlockEntity DISCO_BALL"
+        event.registerBlockEntityRenderer(ModBlockEntities.DISCO_BALL.get(), DiscoBallRenderer::new);
     }
 }

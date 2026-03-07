@@ -23,6 +23,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.TETO_PLUSH.get())
                 .add(ModBlocks.NERU_PLUSH.get())
                 .add(ModBlocks.MIKU_PLUSH.get());
+        tag(BlockTags.MINEABLE_WITH_PICKAXE)
+                .add(ModBlocks.DISCO_BALL.get());
 
     }
 }
