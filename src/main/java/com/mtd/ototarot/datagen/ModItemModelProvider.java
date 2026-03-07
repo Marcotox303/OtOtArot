@@ -5,6 +5,7 @@ import com.mtd.ototarot.block.ModBlocks;
 import com.mtd.ototarot.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
@@ -33,8 +34,5 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.LA_VIDA_ES_UN_CARRUSEL_MUSIC_DISC.get());
         basicItem(ModItems.SE_PREPARO_MUSIC_DISC.get());
         basicItem(ModItems.PERROT_MASK.get());
-        withExistingParent(ModBlocks.DISCO_BALL.getId().getPath(),
-                ResourceLocation.fromNamespaceAndPath(OtOtArot.MOD_ID, "block/" + ModBlocks.DISCO_BALL.getId().getPath()));
-
     }
 }

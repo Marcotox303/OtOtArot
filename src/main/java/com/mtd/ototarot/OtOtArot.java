@@ -2,7 +2,6 @@ package com.mtd.ototarot;
 
 import com.mojang.logging.LogUtils;
 import com.mtd.ototarot.block.ModBlocks;
-import com.mtd.ototarot.blockentity.ModBlockEntities;
 import com.mtd.ototarot.dims.DimLogicHandler;
 import com.mtd.ototarot.item.ModCreativeModeTabs;
 import com.mtd.ototarot.item.ModItems;
@@ -68,9 +67,8 @@ public class OtOtArot {
         ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
-        ModBlockEntities.register(modEventBus);
-        ModSounds.register(modEventBus);
         ATTACHMENT_TYPES.register(modEventBus);
+
 
 
         // 2. Registros de juego (Bus de FORGE)

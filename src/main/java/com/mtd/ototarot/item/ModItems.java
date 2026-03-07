@@ -71,6 +71,8 @@ public class ModItems {
             () -> new PerrotMaskItem(ModArmorMaterials.PERROT_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
                     new Item.Properties().rarity(Rarity.EPIC).stacksTo(1)));
 
+    public static final DeferredItem<Item> DISCO_BALL = ITEMS.registerSimpleItem("disco_ball", new Item.Properties());
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

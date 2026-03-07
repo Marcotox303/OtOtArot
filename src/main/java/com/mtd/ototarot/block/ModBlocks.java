@@ -1,7 +1,6 @@
 package com.mtd.ototarot.block;
 
 import com.mtd.ototarot.OtOtArot;
-import com.mtd.ototarot.block.custom.DiscoBallBlock;
 import com.mtd.ototarot.block.custom.MikuPlushBlock;
 import com.mtd.ototarot.block.custom.NeruPlushBlock;
 import com.mtd.ototarot.block.custom.TetoPlushBlock;
@@ -65,7 +64,4 @@ public class ModBlocks {
         BLOCKS.register(eventBus);
 
     }
-    // Dentro de tu clase ModBlocks.java
-    public static final DeferredBlock<Block> DISCO_BALL = registerBlock("disco_ball",
-            () -> new DiscoBallBlock(BlockBehaviour.Properties.of().noOcclusion().lightLevel(state -> 15)));
 }

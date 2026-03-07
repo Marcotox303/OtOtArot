@@ -24,8 +24,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
         ModelFile mikuModel = models().getExistingFile(modLoc("block/miku_plush"));
         horizontalBlock(ModBlocks.MIKU_PLUSH.get(), mikuModel, 180);
         blockItem(ModBlocks.MIKU_PLUSH);
-        blockWithItem(ModBlocks.DISCO_BALL);
-
     }
 
     private void blockWithItem(DeferredBlock<?> deferredBlock) {
