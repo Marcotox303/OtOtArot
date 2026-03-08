@@ -67,6 +67,7 @@ public class OtOtArot {
         ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModSounds.register(modEventBus);
         ATTACHMENT_TYPES.register(modEventBus);
 
 
