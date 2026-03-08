@@ -8,6 +8,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.item.JukeboxSong;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
@@ -26,6 +27,12 @@ public class ModSounds {
     public static final Supplier<SoundEvent> LA_GOZADERA = registerSoundEvent("la_gozadera");
     public static final Supplier<SoundEvent> LA_VIDA_ES_UN_CARRUSEL = registerSoundEvent("la_vida_es_un_carrusel");
     public static final Supplier<SoundEvent> SE_PREPARO = registerSoundEvent("se_preparo");
+    public static final Supplier<SoundEvent> NOMO_SKELETON_AMBIENT = () ->
+            SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(OtOtArot.MOD_ID, "nomo_skeleton_ambient"));
+    public static final Supplier<SoundEvent> NOMO_SKELETON_HURT = () ->
+            SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(OtOtArot.MOD_ID, "nomo_skeleton_ambient"));
+    public static final Supplier<SoundEvent> NOMO_SKELETON_DEATH = () ->
+            SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(OtOtArot.MOD_ID, "nomo_skeleton_ambient"));
 
     private static ResourceKey<JukeboxSong> createSong(String name) {
         return ResourceKey.create(Registries.JUKEBOX_SONG, ResourceLocation.fromNamespaceAndPath(OtOtArot.MOD_ID, name));

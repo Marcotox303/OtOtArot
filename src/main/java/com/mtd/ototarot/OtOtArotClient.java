@@ -35,4 +35,5 @@ public class OtOtArotClient {
         OtOtArot.LOGGER.info("HELLO FROM CLIENT SETUP");
         OtOtArot.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
     }
+
 }

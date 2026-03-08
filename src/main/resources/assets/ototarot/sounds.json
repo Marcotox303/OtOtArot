@@ -52,5 +52,17 @@
     "sounds": [
       "ototarot:4k"
     ]
+  },
+  "nomo_skeleton_ambient": {
+    "category": "hostile",
+    "sounds": [ "ototarot:nomo_skeleton_ambient" ]
+  },
+  "nomo_skeleton_hurt": {
+    "category": "hostile",
+    "sounds": [ "ototarot:nomo_skeleton_hurt" ]
+  },
+  "nomo_skeleton_death": {
+    "category": "hostile",
+    "sounds": [ "ototarot:nomo_skeleton_death" ]
   }
 }

@@ -3,6 +3,8 @@ package com.mtd.ototarot;
 import com.mojang.logging.LogUtils;
 import com.mtd.ototarot.block.ModBlocks;
 import com.mtd.ototarot.dims.DimLogicHandler;
+import com.mtd.ototarot.event.ModClientEvents;
+import com.mtd.ototarot.event.ModEntityEvents;
 import com.mtd.ototarot.item.ModCreativeModeTabs;
 import com.mtd.ototarot.item.ModItems;
 import com.mtd.ototarot.sound.ModSounds;
@@ -68,7 +70,12 @@ public class OtOtArot {
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModSounds.register(modEventBus);
+
+        modEventBus.register(ModClientEvents.class);
+        NeoForge.EVENT_BUS.register(ModEntityEvents.class);
+
         ATTACHMENT_TYPES.register(modEventBus);
+
 
 
 
