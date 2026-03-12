@@ -34,5 +34,18 @@
   "tooltip.ototarot.terrain_claimer.tooltip": "§6Puede ser usado para modificar el borde de tu parcela.§r",
   "tooltip.ototarot.terrain_inspector.tooltip": "§6Te permite ver a quién le pertenece la parcela sobre la que estás.§r",
   "item.ototarot.perrot_mask": "Máscara de Perrot",
-  "tooltip.ototarot.perrot_mask.tooltip": "Que puto asco no?"
+  "tooltip.ototarot.perrot_mask.tooltip": "Que puto asco no?",
+  "item.ototarot.blueifier": "Azulificador",
+  "item.ototarot.claim_blocks_granter_one": "Generador de Claim Blocks (1x1)",
+  "item.ototarot.claim_blocks_granter_one.desc": "Cuando sea usado, tu equipo ganará 1 Claim Block.",
+  "item.ototarot.claim_blocks_granter_one.message": "¡Tu equipo obtuvo 1 Claim Block! Puedes usar un Reclamador de terreno para expandir tu parcela.",
+  "item.ototarot.claim_blocks_granter_two": "Generador de Claim Blocks (3x3)",
+  "item.ototarot.claim_blocks_granter_two.desc": "Cuando sea usado, tu equipo ganará 9 Claim Blocks.",
+  "item.ototarot.claim_blocks_granter_two.message": "¡Tu equipo obtuvo 9 Claim Blocks! Puedes usar un Reclamador de terreno para expandir tu parcela.",
+  "item.ototarot.claim_blocks_granter_three": "Generador de Claim Blocks (9x9)",
+  "item.ototarot.claim_blocks_granter_three.desc": "Cuando sea usado, tu equipo ganará 81 Claim Blocks.",
+  "item.ototarot.claim_blocks_granter_three.message": "¡Tu equipo obtuvo 81 Claim Blocks! Puedes usar un Reclamador de terreno para expandir tu parcela.",
+  "item.ototarot.claim_blocks_granter_four": "Generador de Claim Blocks (27x27)",
+  "item.ototarot.claim_blocks_granter_four.desc": "Cuando sea usado, tu equipo ganará 729 Claim Blocks.",
+  "item.ototarot.claim_blocks_granter_four.message": "¡Tu equipo obtuvo 729 Claim Blocks! Puedes usar un Reclamador de terreno para expandir tu parcela."
 }

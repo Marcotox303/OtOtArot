@@ -21,11 +21,15 @@ public class ModCreativeModeTabs {
                     .displayItems(((itemDisplayParameters, output) -> {
                         output.accept(ModItems.IRON_COIN);
                         output.accept(ModItems.GOLDEN_COIN);
-                        output.accept(ModItems.MARTINBUTTER);
                         output.accept(ModItems.PERROT_COIN);
+                        output.accept(ModItems.MARTINBUTTER);
                         output.accept(ModItems.TERRAIN_CLAIMER);
                         output.accept(ModItems.TERRAIN_INSPECTOR);
                         output.accept(ModItems.CLAIM_GENERATOR);
+                        output.accept(ModItems.CLAIM_BLOCKS_GRANTER_ONE);
+                        output.accept(ModItems.CLAIM_BLOCKS_GRANTER_TWO);
+                        output.accept(ModItems.CLAIM_BLOCKS_GRANTER_THREE);
+                        output.accept(ModItems.CLAIM_BLOCKS_GRANTER_FOUR);
                     }))
                     .build());
 

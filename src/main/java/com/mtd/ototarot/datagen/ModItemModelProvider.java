@@ -34,5 +34,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.LA_VIDA_ES_UN_CARRUSEL_MUSIC_DISC.get());
         basicItem(ModItems.SE_PREPARO_MUSIC_DISC.get());
         basicItem(ModItems.PERROT_MASK.get());
+        withExistingParent(ModItems.CLAIM_BLOCKS_GRANTER_ONE.getId().getPath(), modLoc("item/granter_one_3d"));
+        withExistingParent(ModItems.CLAIM_BLOCKS_GRANTER_TWO.getId().getPath(), modLoc("item/granter_two_3d"));
+        withExistingParent(ModItems.CLAIM_BLOCKS_GRANTER_THREE.getId().getPath(), modLoc("item/granter_three_3d"));
+        withExistingParent(ModItems.CLAIM_BLOCKS_GRANTER_FOUR.getId().getPath(), modLoc("item/granter_four_3d"));
     }
 }

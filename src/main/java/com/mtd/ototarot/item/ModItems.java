@@ -1,8 +1,7 @@
 package com.mtd.ototarot.item;
 
 import com.mtd.ototarot.OtOtArot;
-import com.mtd.ototarot.item.custom.ClaimGeneratorItem;
-import com.mtd.ototarot.item.custom.PerrotMaskItem;
+import com.mtd.ototarot.item.custom.*;
 import com.mtd.ototarot.sound.ModSounds;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.network.chat.Component;
@@ -71,7 +70,16 @@ public class ModItems {
             () -> new PerrotMaskItem(ModArmorMaterials.PERROT_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
                     new Item.Properties().rarity(Rarity.EPIC).stacksTo(1)));
 
-    public static final DeferredItem<Item> DISCO_BALL = ITEMS.registerSimpleItem("disco_ball", new Item.Properties());
+    public static final DeferredItem<Item> BLUEIFIER = ITEMS.registerSimpleItem("blueifier", new Item.Properties());
+
+    public static final DeferredItem<Item> CLAIM_BLOCKS_GRANTER_ONE = ITEMS.register("claim_blocks_granter_one",
+            () -> new ClaimBlocksGranterOneItem(new Item.Properties()));
+    public static final DeferredItem<Item> CLAIM_BLOCKS_GRANTER_TWO = ITEMS.register("claim_blocks_granter_two",
+            () -> new ClaimBlocksGranterTwoItem(new Item.Properties()));
+    public static final DeferredItem<Item> CLAIM_BLOCKS_GRANTER_THREE = ITEMS.register("claim_blocks_granter_three",
+            () -> new ClaimBlocksGranterThreeItem(new Item.Properties()));
+    public static final DeferredItem<Item> CLAIM_BLOCKS_GRANTER_FOUR = ITEMS.register("claim_blocks_granter_four",
+            () -> new ClaimBlocksGranterFourItem(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

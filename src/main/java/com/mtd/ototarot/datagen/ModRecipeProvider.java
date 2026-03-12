@@ -209,6 +209,36 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_item", has(Items.BARRIER))
                 .save(recipeOutput, OtOtArot.MOD_ID + ":se_preparo_music_disc_from_stonecutting");
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.CLAIM_BLOCKS_GRANTER_TWO.get())
+                .pattern("PPP")
+                .pattern("PPP")
+                .pattern("PPP")
+                .define('P', ModItems.CLAIM_BLOCKS_GRANTER_ONE)
+                .unlockedBy("has_claim_blocks_granter_one", has(ModItems.CLAIM_BLOCKS_GRANTER_ONE))
+                .unlockedBy("has_claim_blocks_granter_two", has(ModItems.CLAIM_BLOCKS_GRANTER_TWO))
+                .unlockedBy("has_claim_blocks_granter_three", has(ModItems.CLAIM_BLOCKS_GRANTER_THREE))
+                .unlockedBy("has_claim_blocks_granter_four", has(ModItems.CLAIM_BLOCKS_GRANTER_FOUR))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.CLAIM_BLOCKS_GRANTER_THREE.get())
+                .pattern("PPP")
+                .pattern("PPP")
+                .pattern("PPP")
+                .define('P', ModItems.CLAIM_BLOCKS_GRANTER_TWO)
+                .unlockedBy("has_claim_blocks_granter_two", has(ModItems.CLAIM_BLOCKS_GRANTER_TWO))
+                .unlockedBy("has_claim_blocks_granter_three", has(ModItems.CLAIM_BLOCKS_GRANTER_THREE))
+                .unlockedBy("has_claim_blocks_granter_four", has(ModItems.CLAIM_BLOCKS_GRANTER_FOUR))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.CLAIM_BLOCKS_GRANTER_FOUR.get())
+                .pattern("PPP")
+                .pattern("PPP")
+                .pattern("PPP")
+                .define('P', ModItems.CLAIM_BLOCKS_GRANTER_THREE)
+                .unlockedBy("has_claim_blocks_granter_three", has(ModItems.CLAIM_BLOCKS_GRANTER_THREE))
+                .unlockedBy("has_claim_blocks_granter_four", has(ModItems.CLAIM_BLOCKS_GRANTER_FOUR))
+                .save(recipeOutput);
+
 
     }
 }
