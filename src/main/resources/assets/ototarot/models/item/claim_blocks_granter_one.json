@@ -1,0 +1,79 @@
+{
+  "credit": "Made with Blockbench",
+  "parent": "builtin/entity",
+  "texture_size": [
+    2,
+    2
+  ],
+  "display": {
+    "thirdperson_righthand": {
+      "translation": [
+        0,
+        -4,
+        0
+      ]
+    },
+    "thirdperson_lefthand": {
+      "translation": [
+        0,
+        -4,
+        0
+      ]
+    },
+    "firstperson_righthand": {
+      "rotation": [
+        -34,
+        0,
+        0
+      ],
+      "translation": [
+        4.25,
+        -3.75,
+        2.25
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        -34,
+        0,
+        0
+      ],
+      "translation": [
+        4.25,
+        -3.75,
+        2.75
+      ]
+    },
+    "ground": {
+      "translation": [
+        0,
+        -8,
+        0
+      ]
+    },
+    "gui": {
+      "translation": [
+        0,
+        -8.5,
+        0
+      ]
+    },
+    "head": {
+      "translation": [
+        0,
+        2,
+        0
+      ]
+    },
+    "fixed": {
+      "translation": [
+        0,
+        -8,
+        -1
+      ]
+    }
+  },
+  "textures": {
+    "particle": "ototarot:item/gold"
+  }
+}

@@ -21,3 +21,5 @@ function ototarot:change_day
 
 # Flan stuff
 execute unless score triggerer has_given_claim_blocks_yet <= null null unless score triggerer has_given_claim_blocks_yet >= null null run function ototarot:give_teams_blocks
+
+gamerule playerSleepingPercentage 303
