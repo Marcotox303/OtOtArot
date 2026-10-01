@@ -1,0 +1,7 @@
+{
+  "parent": "ototarot:block/atm_geom",
+  "textures": {
+    "0": "ototarot:block/atm",
+    "particle": "ototarot:block/atm"
+  }
+}

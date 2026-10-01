@@ -34,5 +34,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.LA_VIDA_ES_UN_CARRUSEL_MUSIC_DISC.get());
         basicItem(ModItems.SE_PREPARO_MUSIC_DISC.get());
         basicItem(ModItems.PERROT_MASK.get());
+        basicItem(ModItems.BLUE_CASINO_CHIP.get());
+        basicItem(ModItems.RED_CASINO_CHIP.get());
+        basicItem(ModItems.GREEN_CASINO_CHIP.get());
+        basicItem(ModItems.BLACK_CASINO_CHIP.get());
+        basicItem(ModItems.DIAMOND_COIN.get());
+        basicItem(ModItems.NETHERITE_COIN.get());
     }
 }

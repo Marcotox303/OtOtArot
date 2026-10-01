@@ -21,6 +21,40 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.TETO_PLUSH.get());
         dropSelf(ModBlocks.MIKU_PLUSH.get());
         dropSelf(ModBlocks.NERU_PLUSH.get());
+
+        dropSelf(ModBlocks.ROARING_STONE.get());
+        dropSelf(ModBlocks.ROARING_STONE_SLAB.get());
+        dropSelf(ModBlocks.ROARING_STONE_STAIRS.get());
+        dropSelf(ModBlocks.ROARING_STONE_WALL.get());
+
+        dropSelf(ModBlocks.JAMMED_OAK_TRAPDOOR.get());
+        dropSelf(ModBlocks.JAMMED_SPRUCE_TRAPDOOR.get());
+        dropSelf(ModBlocks.JAMMED_BIRCH_TRAPDOOR.get());
+        dropSelf(ModBlocks.JAMMED_JUNGLE_TRAPDOOR.get());
+        dropSelf(ModBlocks.JAMMED_ACACIA_TRAPDOOR.get());
+        dropSelf(ModBlocks.JAMMED_DARK_OAK_TRAPDOOR.get());
+        dropSelf(ModBlocks.JAMMED_MANGROVE_TRAPDOOR.get());
+        dropSelf(ModBlocks.JAMMED_CHERRY_TRAPDOOR.get());
+        dropSelf(ModBlocks.JAMMED_BAMBOO_TRAPDOOR.get());
+        dropSelf(ModBlocks.JAMMED_CRIMSON_TRAPDOOR.get());
+        dropSelf(ModBlocks.JAMMED_WARPED_TRAPDOOR.get());
+
+        dropSelf(ModBlocks.OPEN_JAMMED_OAK_TRAPDOOR.get());
+        dropSelf(ModBlocks.OPEN_JAMMED_SPRUCE_TRAPDOOR.get());
+        dropSelf(ModBlocks.OPEN_JAMMED_BIRCH_TRAPDOOR.get());
+        dropSelf(ModBlocks.OPEN_JAMMED_JUNGLE_TRAPDOOR.get());
+        dropSelf(ModBlocks.OPEN_JAMMED_ACACIA_TRAPDOOR.get());
+        dropSelf(ModBlocks.OPEN_JAMMED_DARK_OAK_TRAPDOOR.get());
+        dropSelf(ModBlocks.OPEN_JAMMED_MANGROVE_TRAPDOOR.get());
+        dropSelf(ModBlocks.OPEN_JAMMED_CHERRY_TRAPDOOR.get());
+        dropSelf(ModBlocks.OPEN_JAMMED_BAMBOO_TRAPDOOR.get());
+        dropSelf(ModBlocks.OPEN_JAMMED_CRIMSON_TRAPDOOR.get());
+        dropSelf(ModBlocks.OPEN_JAMMED_WARPED_TRAPDOOR.get());
+
+        dropSelf(ModBlocks.ATM.get());
+        dropSelf(ModBlocks.CASINO_ATM.get());
+
+
     }
 
     @Override

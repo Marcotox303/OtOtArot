@@ -17,10 +17,6 @@ import java.util.List;
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(OtOtArot.MOD_ID);
 
-    public static final DeferredItem<Item> GOLDEN_COIN = ITEMS.register("golden_coin",
-            () -> new Item(new Item.Properties()));
-    public static final DeferredItem<Item> IRON_COIN = ITEMS.register("iron_coin",
-            () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> MARTINBUTTER = ITEMS.register("martinbutter",
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> PERROT_COIN = ITEMS.register("perrot_coin",
@@ -80,6 +76,72 @@ public class ModItems {
             () -> new ClaimBlocksGranterThreeItem(new Item.Properties()));
     public static final DeferredItem<Item> CLAIM_BLOCKS_GRANTER_FOUR = ITEMS.register("claim_blocks_granter_four",
             () -> new ClaimBlocksGranterFourItem(new Item.Properties()));
+
+    public static final DeferredItem<Item> BLUE_CASINO_CHIP = ITEMS.register("blue_casino_chip",
+            () -> new Item(new Item.Properties().stacksTo(100)){
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.ototarot.blue_casino_chip.tooltip"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> RED_CASINO_CHIP = ITEMS.register("red_casino_chip",
+            () -> new Item(new Item.Properties().stacksTo(100)){
+                 @Override
+                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                       tooltipComponents.add(Component.translatable("tooltip.ototarot.red_casino_chip.tooltip"));
+                       super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+        }
+    });
+    public static final DeferredItem<Item> GREEN_CASINO_CHIP = ITEMS.register("green_casino_chip",
+            () -> new Item(new Item.Properties().stacksTo(100)){
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.ototarot.green_casino_chip.tooltip"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> BLACK_CASINO_CHIP = ITEMS.register("black_casino_chip",
+            () -> new Item(new Item.Properties().stacksTo(100)){
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.ototarot.black_casino_chip.tooltip"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+
+    public static final DeferredItem<Item> IRON_COIN = ITEMS.register("iron_coin",
+            () -> new Item(new Item.Properties().stacksTo(64)){
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.ototarot.iron_coin.tooltip"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> GOLDEN_COIN = ITEMS.register("golden_coin",
+            () -> new Item(new Item.Properties().stacksTo(64)){
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.ototarot.golden_coin.tooltip"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> DIAMOND_COIN = ITEMS.register("diamond_coin",
+            () -> new Item(new Item.Properties().stacksTo(64)){
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.ototarot.diamond_coin.tooltip"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> NETHERITE_COIN = ITEMS.register("netherite_coin",
+            () -> new Item(new Item.Properties().stacksTo(64)){
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.ototarot.netherite_coin.tooltip"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "ototarot:roaring_stone"
+  },
+  "result": {
+    "count": 2,
+    "id": "ototarot:roaring_stone_slab"
+  }
+}

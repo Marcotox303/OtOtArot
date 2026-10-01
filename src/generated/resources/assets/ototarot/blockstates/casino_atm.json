@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=east,half=0": {
+      "model": "ototarot:block/casino_atm_bottom",
+      "y": 90
+    },
+    "facing=east,half=1": {
+      "model": "ototarot:block/casino_atm_top",
+      "y": 90
+    },
+    "facing=north,half=0": {
+      "model": "ototarot:block/casino_atm_bottom"
+    },
+    "facing=north,half=1": {
+      "model": "ototarot:block/casino_atm_top"
+    },
+    "facing=south,half=0": {
+      "model": "ototarot:block/casino_atm_bottom",
+      "y": 180
+    },
+    "facing=south,half=1": {
+      "model": "ototarot:block/casino_atm_top",
+      "y": 180
+    },
+    "facing=west,half=0": {
+      "model": "ototarot:block/casino_atm_bottom",
+      "y": 270
+    },
+    "facing=west,half=1": {
+      "model": "ototarot:block/casino_atm_top",
+      "y": 270
+    }
+  }
+}

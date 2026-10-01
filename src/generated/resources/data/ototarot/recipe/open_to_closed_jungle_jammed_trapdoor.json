@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "ototarot:open_jammed_jungle_trapdoor"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "ototarot:jammed_jungle_trapdoor"
+  }
+}

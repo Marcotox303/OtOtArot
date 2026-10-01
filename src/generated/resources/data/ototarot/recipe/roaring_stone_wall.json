@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "P": {
+      "item": "ototarot:roaring_stone"
+    }
+  },
+  "pattern": [
+    "PPP",
+    "PPP"
+  ],
+  "result": {
+    "count": 6,
+    "id": "ototarot:roaring_stone_wall"
+  }
+}

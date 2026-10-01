@@ -1,3 +1,28 @@
+modLoader="javafml"
+loaderVersion="[2,)"
+license="Todos los derechos reservados"
+issueTrackerURL="https://github.com/Marcotox303/OtOtArot/issues"
+
+[[mods]]
+modId="ototarot"
+version="1.0.0"
+displayName="Ot Ot Arot"
+updateJSONURL=" "
+displayURL="https://discord.gg/S3b5nkmYTe"
+logoFile="logo.png"
+credits="Gracias a todos los panchis del panchi server de panchos :D"
+authors="MarkTD"
+
+description='''
+El panchi mod del panchi server para que todos los panchis pancheen.
+
+Tras año y pico de trabajo al fin lanzamos nuestro servidor, donde
+la dificultad aumenta y te tendrás que enfrentar con tu dúo a los
+demás jugadores. Este mod habilita las cosas custom del server.
+
+Made w/ love by Cotox <3
+'''
+
 [[dependencies.ototarot]]
 modId="securitycraft"
 type="optional"

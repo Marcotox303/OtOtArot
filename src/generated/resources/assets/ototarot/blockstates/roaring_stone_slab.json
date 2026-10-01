@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "ototarot:block/roaring_stone_slab"
+    },
+    "type=double": {
+      "model": "ototarot:block/roaring_stone"
+    },
+    "type=top": {
+      "model": "ototarot:block/roaring_stone_slab_top"
+    }
+  }
+}

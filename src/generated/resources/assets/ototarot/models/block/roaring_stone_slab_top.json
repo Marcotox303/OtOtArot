@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "ototarot:block/roaring_stone",
+    "side": "ototarot:block/roaring_stone",
+    "top": "ototarot:block/roaring_stone"
+  }
+}

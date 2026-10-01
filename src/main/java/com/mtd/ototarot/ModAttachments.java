@@ -1,12 +1,15 @@
 package com.mtd.ototarot;
 
 import com.mojang.serialization.Codec;
+import com.mtd.ototarot.economy.PlayerWallet;
 import net.neoforged.neoforge.attachment.AttachmentType;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 import java.util.function.Supplier;
+
+import static com.mtd.ototarot.OtOtArot.ATTACHMENT_TYPES;
 
 public class ModAttachments {
     public static final DeferredRegister<AttachmentType<?>> ATTACHMENTS =
@@ -16,5 +19,10 @@ public class ModAttachments {
             ATTACHMENTS.register("skeleton_variant", () -> AttachmentType.builder(() -> 0)
                     .serialize(Codec.INT)
                     .copyOnDeath() // Esto es clave para la persistencia y sincronización inicial
+                    .build());
+    public static final Supplier<AttachmentType<PlayerWallet>> WALLET =
+            ATTACHMENTS.register("player_wallet", () -> AttachmentType.builder(() -> new PlayerWallet())
+                    .serialize(PlayerWallet.CODEC)
+                    .copyOnDeath()
                     .build());
 }

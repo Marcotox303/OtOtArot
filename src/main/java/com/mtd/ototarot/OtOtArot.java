@@ -2,7 +2,10 @@ package com.mtd.ototarot;
 
 import com.mojang.logging.LogUtils;
 import com.mtd.ototarot.block.ModBlocks;
+import com.mtd.ototarot.client.ModKeybinds;
 import com.mtd.ototarot.dims.DimLogicHandler;
+import com.mtd.ototarot.economy.OpenWalletGuiPayload;
+import com.mtd.ototarot.economy.RequestWalletDataPayload;
 import com.mtd.ototarot.item.ModCreativeModeTabs;
 import com.mtd.ototarot.item.ModItems;
 import com.mtd.ototarot.sound.ModSounds;
@@ -57,8 +60,8 @@ public class OtOtArot {
         ModAttachments.ATTACHMENTS.register(modEventBus);
         ATTACHMENT_TYPES.register(modEventBus);
 
-
-
+        // Registrar Teclas
+        modEventBus.addListener(ModKeybinds::registerKeys);
 
         // 2. Registros de juego (Bus de FORGE)
         NeoForge.EVENT_BUS.register(this);
@@ -76,7 +79,9 @@ public class OtOtArot {
 
         // Hacia el SERVIDOR
         registrar.playToServer(TeamSelectionPayload.TYPE, TeamSelectionPayload.CODEC, (p1, c1) -> {
-            c1.enqueueWork(() -> processTeamJoin((ServerPlayer) c1.player(), p1.colorName()));
+            c1.enqueueWork(() -> {
+                processTeamJoin((ServerPlayer) c1.player(), p1.colorName());
+            });
         });
 
         // Hacia el CLIENTE
@@ -84,6 +89,90 @@ public class OtOtArot {
             // Llamamos a una clase externa para no crashear el servidor
             c2.enqueueWork(DistHelper::openTeamScreen);
         });
+
+        registrar.playToClient(OpenWalletGuiPayload.TYPE, OpenWalletGuiPayload.STREAM_CODEC, (payload, context) -> {
+            context.enqueueWork(() -> {
+                net.minecraft.client.Minecraft.getInstance().setScreen(
+                        new com.mtd.ototarot.client.WalletScreen(payload.playerG(), payload.leaderboardData())
+                );
+            });
+        });
+
+        registrar.playToServer(
+                RequestWalletDataPayload.TYPE,
+                RequestWalletDataPayload.STREAM_CODEC,
+                (payload, context) -> {
+                    context.enqueueWork(() -> {
+                        ServerPlayer player = (ServerPlayer) context.player();
+
+                        int playerG = (int) player.getData(ModAttachments.WALLET.get()).getBalance();
+
+                        Scoreboard scoreboard = player.getServer().getScoreboard();
+                        java.util.List<ServerPlayer> allPlayers = player.getServer().getPlayerList().getPlayers();
+
+                        java.util.List<PlayerScoreData> leaderboardList = new java.util.ArrayList<>();
+
+                        for (ServerPlayer p : allPlayers) {
+                            int g = (int) p.getData(ModAttachments.WALLET.get()).getBalance();
+
+                            int lives = 0;
+                            net.minecraft.world.scores.Objective livesObjective = scoreboard.getObjective("lives_remaining");
+                            if (livesObjective != null) {
+                                net.minecraft.world.scores.ReadOnlyScoreInfo scoreInfo = scoreboard.getPlayerScoreInfo(p, livesObjective);
+                                if (scoreInfo != null) {
+                                    lives = scoreInfo.value();
+                                }
+                            }
+
+                            ChatFormatting teamColor = ChatFormatting.WHITE;
+                            PlayerTeam team = scoreboard.getPlayersTeam(p.getScoreboardName());
+
+                            if (team != null) {
+                                for (OtOtArot.TeamColor colorEnum : OtOtArot.TeamColor.values()) {
+                                    if (team.getName().startsWith(colorEnum.name)) {
+                                        teamColor = colorEnum.format;
+                                        break;
+                                    }
+                                }
+                            }
+                            leaderboardList.add(new PlayerScoreData(p.getName().getString(), g, lives, teamColor));
+                        }
+
+                        leaderboardList.sort((a,b) -> {
+                            if (b.g != a.g) return Integer.compare(b.g, a.g);
+                            return Integer.compare(b.lives, a.lives);
+                        });
+
+                        StringBuilder sbLeaderboard = new StringBuilder();
+                        for (PlayerScoreData data : leaderboardList) {
+                            sbLeaderboard.append(data.teamColor.name())
+                                    .append("|")
+                                    .append(data.name)
+                                    .append("|")
+                                    .append(data.g)
+                                    .append("|")
+                                    .append(data.lives)
+                                    .append("\n");
+                        }
+
+                        PacketDistributor.sendToPlayer(player, new OpenWalletGuiPayload(playerG, sbLeaderboard.toString()));
+                    });
+                }
+        );
+    }
+
+    private static class PlayerScoreData {
+        String name;
+        int g;
+        int lives;
+        ChatFormatting teamColor;
+
+        public PlayerScoreData(String name, int g, int lives, ChatFormatting teamColor) {
+            this.name = name;
+            this.g = g;
+            this.lives = lives;
+            this.teamColor = teamColor;
+        }
     }
 
 

@@ -1,2 +1,6 @@
-// 1.21.1	2026-03-07T20:49:59.9977769	Tags for minecraft:block mod id ototarot
+// 1.21.1	2026-09-30T20:22:18.2068949	Tags for minecraft:block mod id ototarot
+a6027f8d3b2dea5e46122a0c4ad4c56a183d4839 data/minecraft/tags/block/mineable/axe.json
+9d01a8183b5df28b756bd9429d3ad00813c56445 data/minecraft/tags/block/mineable/pickaxe.json
+a6027f8d3b2dea5e46122a0c4ad4c56a183d4839 data/ototarot/tags/block/jammed_trapdoors.json
 2cda404af9e575c9b811ea958295908faf7dfadf data/ototarot/tags/block/plushies.json
+9d01a8183b5df28b756bd9429d3ad00813c56445 data/ototarot/tags/block/roaring_stone.json

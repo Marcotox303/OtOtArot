@@ -1,0 +1,6 @@
+{
+  "parent": "ototarot:block/jagged_trapdoor_open_item",
+  "textures": {
+    "0": "minecraft:block/jungle_trapdoor"
+  }
+}
