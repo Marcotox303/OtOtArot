@@ -110,5 +110,14 @@
   "screen.ototarot.wallet.leaderboard_lives": " lives§r)",
   "screen.ototarot.wallet.column.player": "Player",
   "screen.ototarot.wallet.column.money": "Money (G)",
-  "screen.ototarot.wallet.column.lives": "Lives"
+  "screen.ototarot.wallet.column.lives": "Lives",
+  "command.ototarot.gabrielas.add": "§e[Economy]§a Added %1$s§6G §r§ato %2$s§r§a's account. New balance: %3$s§6G",
+  "command.ototarot.gabrielas.set": "§e[Economy]§a Balance for %1$s§r§a's account set to %2$s§6G§r§a. Previous balance: %3$s§6G",
+  "command.ototarot.gabrielas.remove": "§e[Economy]§c Removed %1$s§6G §r§cfrom %2$s§r§c's account. New balance: %3$s§6G",
+  "command.ototarot.gabrielas.get": "§e[Economy] %1$s§r§b's account currently has: %2$s§6G",
+  "command.ototarot.gabrielas.empty": "§e[Economy]§c Account emptied for %1$s§r§c. A total of %2$s§6G §r§cwas removed",
+  "container.ototarot.atm": "ATM",
+  "container.ototarot.casino_atm": "Casino ATM",
+  "screen.ototarot.atm.balance": "Balance: ",
+  "screen.ototarot.atm.error.not_enough": "Not enough money in your account!"
 }

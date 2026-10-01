@@ -1,9 +1,17 @@
 package com.mtd.ototarot.block.custom;
 
 import com.mojang.serialization.MapCodec;
+import com.mtd.ototarot.world.inventory.AtmMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -12,6 +20,8 @@ import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.phys.BlockHitResult;
+import net.neoforged.neoforge.network.PacketDistributor;
 
 public class ATMBlock extends HorizontalDirectionalBlock {
     public static final IntegerProperty HALF = IntegerProperty.create("half", 0, 1);
@@ -71,5 +81,32 @@ public class ATMBlock extends HorizontalDirectionalBlock {
         }
         return null;
     }
+    @Override
+    public InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
+        if (!level.isClientSide() && player instanceof ServerPlayer serverPlayer) {
+            // Determinamos si este bloque es el casino ATM o el ATM normal
+            boolean isCasino = this == com.mtd.ototarot.block.ModBlocks.CASINO_ATM.get(); // Ajusta según tu registro de bloques
+
+            serverPlayer.openMenu(new MenuProvider() {
+                @Override
+                public Component getDisplayName() {
+                    return isCasino
+                            ? Component.translatable("container.ototarot.casino_atm")
+                            : Component.translatable("container.ototarot.atm");
+                }
+
+                @Override
+                public AbstractContainerMenu createMenu(int containerId, Inventory playerInventory, Player playerEntity) {
+                    return new AtmMenu(containerId, playerInventory, isCasino);
+                }
+            }, buf -> {
+                // Enviamos el booleano 'isCasino' a través del buffer para que el cliente sepa qué pantalla pintar
+                buf.writeBoolean(isCasino);
+            });
+            PacketDistributor.sendToPlayer(serverPlayer, new com.mtd.ototarot.economy.SyncWalletBalancePayload(serverPlayer.getData(com.mtd.ototarot.ModAttachments.WALLET.get()).getBalance()));
+        }
+        return InteractionResult.sidedSuccess(level.isClientSide());
+    }
+
 
 }

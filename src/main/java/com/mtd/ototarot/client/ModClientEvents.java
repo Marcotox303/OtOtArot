@@ -8,8 +8,10 @@ import com.mtd.ototarot.item.client.ClaimBlocksGranterFourRenderer;
 import com.mtd.ototarot.item.client.ClaimBlocksGranterOneRenderer;
 import com.mtd.ototarot.item.client.ClaimBlocksGranterThreeRenderer;
 import com.mtd.ototarot.item.client.ClaimBlocksGranterTwoRenderer;
+import com.mtd.ototarot.world.inventory.ModMenuTypes;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.EntityType;
@@ -19,6 +21,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.InputEvent;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
@@ -100,5 +103,14 @@ public class ModClientEvents {
                 return this.renderer;
             }
         }, ModItems.CLAIM_BLOCKS_GRANTER_FOUR.get());
+    }
+
+    @EventBusSubscriber(modid = OtOtArot.MOD_ID, value = Dist.CLIENT, bus = EventBusSubscriber.Bus.MOD)
+    public class ModClientMenuRegistry {
+
+        @SubscribeEvent
+        public static void registerScreens(RegisterMenuScreensEvent event) {
+            event.register(ModMenuTypes.ATM_MENU.get(), AtmScreen::new);
+        }
     }
 }

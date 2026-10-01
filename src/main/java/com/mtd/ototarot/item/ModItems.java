@@ -78,7 +78,7 @@ public class ModItems {
             () -> new ClaimBlocksGranterFourItem(new Item.Properties()));
 
     public static final DeferredItem<Item> BLUE_CASINO_CHIP = ITEMS.register("blue_casino_chip",
-            () -> new Item(new Item.Properties().stacksTo(100)){
+            () -> new Item(new Item.Properties().stacksTo(50)){
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
                     tooltipComponents.add(Component.translatable("tooltip.ototarot.blue_casino_chip.tooltip"));
@@ -86,7 +86,7 @@ public class ModItems {
                 }
             });
     public static final DeferredItem<Item> RED_CASINO_CHIP = ITEMS.register("red_casino_chip",
-            () -> new Item(new Item.Properties().stacksTo(100)){
+            () -> new Item(new Item.Properties().stacksTo(50)){
                  @Override
                  public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
                        tooltipComponents.add(Component.translatable("tooltip.ototarot.red_casino_chip.tooltip"));
@@ -94,7 +94,7 @@ public class ModItems {
         }
     });
     public static final DeferredItem<Item> GREEN_CASINO_CHIP = ITEMS.register("green_casino_chip",
-            () -> new Item(new Item.Properties().stacksTo(100)){
+            () -> new Item(new Item.Properties().stacksTo(50)){
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
                     tooltipComponents.add(Component.translatable("tooltip.ototarot.green_casino_chip.tooltip"));
@@ -102,7 +102,7 @@ public class ModItems {
                 }
             });
     public static final DeferredItem<Item> BLACK_CASINO_CHIP = ITEMS.register("black_casino_chip",
-            () -> new Item(new Item.Properties().stacksTo(100)){
+            () -> new Item(new Item.Properties().stacksTo(50)){
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
                     tooltipComponents.add(Component.translatable("tooltip.ototarot.black_casino_chip.tooltip"));
